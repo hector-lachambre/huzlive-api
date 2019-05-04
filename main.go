@@ -71,6 +71,7 @@ func (a *Application) provideDatas(w http.ResponseWriter, r *http.Request) {
 	client := http.Client{}
 
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	if time.Since(a.Cache.StreamContainer.DateSync).Seconds() > 30 {
 
